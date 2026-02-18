@@ -1,184 +1,184 @@
-🚀 Project Module – Task & Project Management System
-📌 Overview
+- 🚀 Project Module – Task & Project Management System
+- 📌 Overview
 
-Project Module is a Laravel-based Project and Task Management System built with role-based access control.
-The system allows Admins, Managers, and Employees to collaborate efficiently on projects and tasks.
+- Project Module is a Laravel-based Project and Task Management System built with role-based access control.
+- The system allows Admins, Managers, and Employees to collaborate efficiently on projects and tasks.
 
-This project was developed using Laravel Breeze for authentication and includes a scheduled cron job for automatic due date validation.
+- This project was developed using Laravel Breeze for authentication and includes a scheduled cron job for automatic due date validation.
 
-🛠 Tech Stack
+- 🛠 Tech Stack
 
-Backend: PHP 8+, Laravel 10+
+- Backend: PHP 8+, Laravel 10+
 
-Authentication: Laravel Breeze
+- Authentication: Laravel Breeze
 
-Database: MySQL
+- Database: MySQL
 
-Frontend: Blade + Bootstrap
+- Frontend: Blade + Bootstrap
 
-API: RESTful API
+- API: RESTful API
 
-Scheduler: Laravel Task Scheduler (Cron Job)
+- Scheduler: Laravel Task Scheduler (Cron Job)
 
-🔐 Authentication Features (Laravel Breeze)
+- 🔐 Authentication Features (Laravel Breeze)
 
-User Registration
+- User Registration
 
-Login
+- Login
 
-Forgot Password
+- Forgot Password
 
-Reset Password
+- Reset Password
 
-Secure Password Hashing
+- Secure Password Hashing
 
-Session-based Authentication
+- Session-based Authentication
 
-👥 User Roles & Access Control
+- 👥 User Roles & Access Control
 
-The system supports three roles:
+- The system supports three roles:
 
-🛡 Admin
+- 🛡 Admin
 
-Full system access
+- Full system access
 
-Manage Users (Admin, Manager, Employee)
+- Manage Users (Admin, Manager, Employee)
 
-Create / Edit / Delete Projects
+- Create / Edit / Delete Projects
 
-Create / Edit / Delete Tasks
+- Create / Edit / Delete Tasks
 
-Assign Managers & Employees
+- Assign Managers & Employees
 
-View all tasks and reports
+- View all tasks and reports
 
-👔 Manager
+- 👔 Manager
 
-Access assigned projects
+- Access assigned projects
 
-Create & manage tasks
+- Create & manage tasks
 
-Assign tasks to employees
+- Assign tasks to employees
 
-Update task details
+- Update task details
 
-View reports
+- View reports
 
-👨‍💻 Employee
+- 👨‍💻 Employee
 
-View assigned tasks
+- View assigned tasks
 
-Update task status
+- Update task status
 
-Cannot create or delete projects
+- Cannot create or delete projects
 
-📂 Modules
-1️⃣ Projects Module
+- 📂 Modules
+- 1️⃣ Projects Module
 
-Create Project
+- Create Project
 
-Assign Manager
+- Assign Manager
 
-Edit / Update Project
+- Edit / Update Project
 
-View Project Details
+- View Project Details
 
-2️⃣ Tasks Module
+- 2️⃣ Tasks Module
 
-Create Task
+- Create Task
 
-Assign Employee
+- Assign Employee
 
-Set Due Date
+- Set Due Date
 
-Update Task Status
+- Update Task Status
 
-Filter Tasks
+- Filter Tasks
 
-⏰ Cron Job – Due Date Validation
+- ⏰ Cron Job – Due Date Validation
 
-A scheduled cron job checks tasks daily.
+- A scheduled cron job checks tasks daily.
 
-Logic:
+- Logic:
 
-If due_date < today
-→ Task is marked as Overdue
+- If due_date < today
+- → Task is marked as Overdue
 
-Setup Cron Job
+- Setup Cron Job
 
-Add this line to your server crontab:
+- Add this line to your server crontab:
 
 * * * * * php /path-to-project/artisan schedule:run >> /dev/null 2>&1
-🌐 API Endpoints
-Get Tasks by Employee ID
-GET /api/tasks/{employee_id}
-With Filters
-GET /api/tasks/{employee_id}?status=completed
-GET /api/tasks/{employee_id}?due_date=2026-02-18
-GET /api/tasks/{employee_id}?project_id=1
-Sample JSON Response
-{
-  "status": true,
-  "data": [
-    {
-      "id": 1,
-      "title": "Design UI",
-      "status": "pending",
-      "due_date": "2026-02-20"
-    }
-  ]
-}
-🔎 Task Filtering Options
+- 🌐 API Endpoints
+- Get Tasks by Employee ID
+- GET /api/tasks/{employee_id}
+- With Filters
+- GET /api/tasks/{employee_id}?status=completed
+- GET /api/tasks/{employee_id}?due_date=2026-02-18
+- GET /api/tasks/{employee_id}?project_id=1
+- Sample JSON Response
+- {
+- "status": true,
+- "data": [
+- {
+- "id": 1,
+- "title": "Design UI",
+- "status": "pending",
+- "due_date": "2026-02-20"
+- }
+- ]
+- }
+- 🔎 Task Filtering Options
 
-Filter by Status
+- Filter by Status
 
-Filter by Due Date
+- Filter by Due Date
 
-Filter by Project
+- Filter by Project
 
-Filter by Employee
+- Filter by Employee
 
-⚙️ Installation Guide
-1️⃣ Clone Repository
-git clone https://github.com/your-username/project-module.git
-cd project-module
-2️⃣ Install Dependencies
-composer install
-npm install
-npm run dev
-3️⃣ Setup Environment File
-cp .env.example .env
-php artisan key:generate
+- ⚙️ Installation Guide
+- 1️⃣ Clone Repository
+- git clone https://github.com/jayaprakash97-dev/project-module
+- cd project-module
+- 2️⃣ Install Dependencies
+- composer install
+- npm install
+- npm run dev
+- 3️⃣ Setup Environment File
+- cp .env.example .env
+- php artisan key:generate
 
-Update database credentials inside .env.
+- Update database credentials inside .env.
 
-4️⃣ Run Migrations
-php artisan migrate
+- 4️⃣ Run Migrations
+- php artisan migrate
 
-(Optional)
+- (Optional)
 
-php artisan db:seed
-5️⃣ Run Application
-php artisan serve
+- php artisan db:seed
+- 5️⃣ Run Application
+- php artisan serve
 
-Visit:
+- Visit:
 
-http://127.0.0.1:8000
-🗄 Database Tables
+- http://127.0.0.1:8000
+- 🗄 Database Tables
 
-users
+- users
 
-projects
+- projects
 
-tasks
+- tasks
 
 
-📌 Business Logic Summary
+- 📌 Business Logic Summary
 
-Admin & Manager → Full access to project management
+- Admin & Manager → Full access to project management
 
-Employee → View assigned tasks and update status
+- Employee → View assigned tasks and update status
 
-Cron job automatically updates overdue tasks
+- Cron job automatically updates overdue tasks
 
-API supports task retrieval and filtering
+- API supports task retrieval and filtering
