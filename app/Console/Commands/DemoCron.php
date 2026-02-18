@@ -44,7 +44,7 @@ class DemoCron extends Command
     {
     Log::info("Cron is working fine!");
         // Deletes records where due_date is today
-    Task::whereDate('due_date', Carbon::today())->delete();
+    Task::whereDate('due_date', '>', Carbon::today())->delete();
     $this->info('Due tasks deleted successfully!');
 
     }
